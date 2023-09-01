@@ -1,0 +1,217 @@
+.Dd September 1 2023        
+.Dt help 1 
+.Os Fedora 38
+.Sh MANPAGES
+.Bl -tag
+.It Nm man Op Ar PROGRAM
+The man utility finds and displays online manual documentation pages. Man pages include descriptions, applicable options, flags, examples, and other informative sections.
+.It Nm tldr Op Ar PROGRAM
+The tldr-project is a collection of community-maintained help pages for command-line tools that aims to be a simpler, more approachable complement to traditional man pages. tldr pages are focused on practical examples. To use tldr you can install the tealdear client at
+.Lk `https://github.com/dbrgn/tealdeer`
+.El
+
+.Sh CORE-UTILS
+.Bl -tag
+.It Nm cd Op Ar DIR
+Change current working directory. If no directory is specified, the working directory is changed to the home directory of the current user.
+.It Nm ls Op Ar DIR
+List the files in a directory. To list all files, including hidden files, in a detailed format, use `ls -lah`.
+.It Nm rm Oo Fl rf Oc Ar FILE ...
+Delete files and directories.
+.It Nm mv Ar SOURCE TARGET
+Move or rename files.
+.It Nm cp Oo Fl R Oc Ar SOURCE TARGET
+Copy a file or directory.
+.It Nm ln Ar SOURCE TARGET
+Create a symbolic link.
+.It Nm pwd
+Print (current) working directory
+.It Nm touch Ar FILE ...
+Create files and update access/modification timestamps.
+.It Nm mkdir Oo Fl p Oc Ar DIR ...
+Create directories
+.It Nm realpath Op Ar PATH ...
+Return resolved physical path.
+.It Nm whoami
+Print the effective user ID 
+.It Nm hostname
+Print the system's host name
+.It Nm du Oo Fl sh Oc Op Ar FILE ...
+Display disk usage on file systems. To print non-recursively in a human readable format, use `du -sh [file]`.
+.El
+
+.Sh ARCHIVE-UTILS
+.Bl -tag
+.It Nm zip Oo Fl re Oc Ar ARCHIVE FILE ...
+Package and compress files into a ZIP archive.
+.It Nm unzip Ar ARCHIVE ...
+Extract files from a ZIP archive.
+.It Nm gzip Oo Fl ldk Oc Ar FILE
+Compress/uncompress files with gzip compression. By default, the input file is replaced. To keep the original file, use the '--keep' option.
+.It Nm tar
+General purpose archiving utility.
+.El
+
+.Sh TEXT-UTILS
+.Bl -tag
+.It Nm cat Oo Fl n Oc Ar FILE
+Print file content to STDOUT. Name derived from concatenate.
+.It Nm less Ar FILE
+Display and navigate file content in a terminal pager.
+.It Nm head Oo Fl n Oc Ar FILE
+Print the first lines of a file.
+.It Nm tail Oo Fl n Oc Ar FILE
+Print the last lines of a file.
+.El
+
+.Sh FILE-UTILS
+.Bl -tag
+.It Nm mediainfo Oo Fl f Oc Ar FILE
+Print information about a file.
+.It Nm exiftool Ar FILE
+Print information about a file.
+.It Nm pandoc Oo Fl -from Ar FORMAT | Fl -to Ar FORMAT Oc Ar FILE
+Convert from one markup format into another.
+.El
+
+.Sh SEARCH-UTILS 
+.Bl -tag
+.It Nm find Ar root Op Ar PATTERN
+Find files or directories recursively in a specified root directory. To search for a filename, use `find /path/to/dir -name *[file-name]*`
+.It Nm locate Oo Fl i Oc Ar PATTERN ...
+Find filenames quickly. `locate` searches in a database prepared by `locate updatedb`. `locate` does not check whether the files in the database still exist. `locate` cannot report files created after the most recent update of the database.
+.It Nm grep Ar PATTERN Ar FILE
+Search for a pattern in files or strings using regular expressions.
+.It Nm sk 
+Fuzzy finder written in rust. See also, `fzf`.
+.El
+
+.Sh NET-UTILS
+.Bl -tag
+.It Nm ip
+Show and manipulate network devices, interfaces and tunnels. To display the host's ip addresses, use `ìp addr`
+.It Nm ifconfig Oo Ar INTERFACE Oc Oo Ar PARAMETERS Oc
+Show and configure network devices.
+.It Nm ping Oo Fl icf Oc Ar HOST
+send ICMP echo-requests to network hosts.
+.It Nm wget Oo Fl c Oc Ar URL
+Download files from the web.
+.It Nm rsync Oo Fl azP Oc Ar SOURCE TARGET
+Transfer and synchronize files between local and remote hosts. 
+.It Nm ssh Ar USERNAME@HOST
+ssh to remote host
+.It Nm dig Ar DOMAIN 
+Get DNS for domain
+.El
+
+.Sh SYS-UTILS
+.Bl -tag
+.It Nm chgrp Oo Ar OPTION Oc Ar GROUP FILE ...
+Change file group ownership.
+.It Nm chown Oo Ar OPTION Oc Oo Ar OWNER Oc Ar FILE 
+Change file ownership.
+.It Nm chmod Oo Ar OPTION Oc Ar MODE FILE
+Change the permissions of a file or directory.
+.It Nm useradd Oo Ar OPTIONS Oc Ar LOGIN
+Create a new user.
+.It Nm usermod Oo Ar OPTIONS Oc Ar LOGIN
+Modify a user account.
+.It Nm userdel Oo Ar OPTIONS Oc LOGIN
+Delete a user account and related files.
+.It Nm groupadd Oo Ar OPTIONS Oc Ar NEWGROUP
+Create a new group.
+.It Nm groupmod Oo Ar OPTIONS Oc Ar GROUP
+Modify a group definition on the system.
+.It Nm groupdel Oo Ar OPTIONS Oc Ar GROUP
+Delete a group
+.It Nm chpasswd Op Ar OPTIONS
+Update passwords in batch mode
+.It Nm passwd
+Update user's authentication tokens
+.El
+
+.Sh LIST USERS AND GROUPS
+.Pp
+User account information is stored in
+.Pa /etc/passwd .
+.Pp
+Group account information is stored in
+.Pa /etc/group .
+.Pp
+A list of users and groups can be found inside these files.
+
+.Sh PACKAGE MANAGEMENT
+.Bl -tag -width -indent
+.It Nm apt
+APT (Advanced Package Tool), is a package manager for Debian-based Linux distributions.
+.It Nm dpkg
+dpkg (Debian Package) is a low-level package manager for Debian-based Linux distrutions. `dpkg` is used to install, remove, and provide information about `.deb` packages.
+.It Nm dnf
+dnf (Dandified YUM) is a package manager for rpm-based Linux distributions such as RHEL, Fedora, and CentOS. It is a sucessor to yum (Yellowdog Updater, Modified).
+.It Nm zypper
+Zypper is a package manager for openSuse.
+.It Nm pacman
+Pacman is a package manager for arch-based distributions. 
+.It Nm yay
+Yay (Yet Another Yogurt) is an AUR-helper for arch-based distributions written in Go.
+.It Nm paru
+Paru is an AUR-helper for arch-based distributions written in Rust.
+.It Nm flatpak
+Flatpak is a software utility for packaging and distributing applications to a wide range of Linux distributions.
+.It Nm snap
+Snap is a software packaging and deployment system developed by Canonical. The packages, called snaps, and the tool for using them, snapd, work across a range of Linux distributions.
+.El
+
+.Sh CLI PROGRAMS
+.Bl -tag -width -indent
+.It Nm htop
+CLI task manager.
+.It Nm nano
+CLI text editor.
+.It Nm vim
+CLI text editor.
+.it Nm hx
+CLI text editor inspired by Kakoune.
+.It Nm joshuto
+CLI file manager.
+.it Nm ranger
+CLI file manager.
+.It Nm disown
+Launch a terminal application in the background. Similar to nohup.
+.It Nm yt-dlp
+Download media from the internet.
+.It Nm ffmpeg
+Audio and video converter.
+.It Nm ffprobe
+Multimedia stream analyzer.
+.It Nm ffplay
+A simple and portable media player.
+.El
+
+.Sh TROUBLESHOOTING
+.Bl -tag -width -indent
+.It Nm inxi
+Display system information.
+.It Nm lscpu
+List cpu information
+.It Nm lshw
+List hardware information.
+.It Nm lspci
+List PCI devices.
+.It Nm lsusb
+List USB devices.
+.It Nm lsblk
+List block (storage) devices.
+.It Nm lsscsi
+List SCSI devices.
+.It Nm uname Op Fl a
+Print kernel information
+.It Nm dmesg
+dmesg (diagnostic message) is a utility for displaying kernel ring buffer messages. It provides a way to access and view system and hardware-related messages generated by the kernel during the boot process and while the system is running.
+.El
+
+.Sh LOGS
+.Pp
+Logs are stored in
+.Pa /var/log ,
+to display the logs, use the `less` command
