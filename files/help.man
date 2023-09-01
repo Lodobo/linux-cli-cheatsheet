@@ -108,7 +108,7 @@ Fuzzy finder written in rust. See also, `fzf`.
 .SH "NET-UTILS"
 .TP 2n
 \fBip\fR
-Show and manipulate network devices, interfaces and tunnels. To display the host's ip addresses, use `\[u00EC]p addr`
+Show and manipulate network devices, interfaces and tunnels. To display the host's ip addresses, use `ip addr`
 .TP 2n
 \fBifconfig\fR [\fIINTERFACE\fR] [\fIPARAMETERS\fR]
 Show and configure network devices.
