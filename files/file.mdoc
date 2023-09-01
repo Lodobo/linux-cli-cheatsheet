@@ -1,51 +1,51 @@
-.Dd 8/4/10        
+.Dd September 1 2023        
 .Dt help 1 
-.Os Darwin
+.Os Fedora 38
 .Sh manpages
 .Bl -tag
-.It Nm man Op Ar program
+.It Nm man Op Ar PROGRAM
 The man utility finds and displays online manual documentation pages. Man pages include descriptions, applicable options, flags, examples, and other informative sections.
-.It Nm tldr Op Ar program
+.It Nm tldr Op Ar PROGRAM
 The tldr-project is a collection of community-maintained help pages for command-line tools that aims to be a simpler, more approachable complement to traditional man pages. tldr pages are focused on practical examples.
 .El
 
 .Sh core-utils
 .Bl -tag
-.It Nm cd Op Ar dir
+.It Nm cd Op Ar DIR
 Change current working directory. If no directory is specified, the working directory is changed to the home directory of the current user.
-.It Nm ls Op Ar dir
+.It Nm ls Op Ar DIR
 List the files in a directory. To list all files, including hidden files, in a detailed format, use `ls -lah`.
-.It Nm rm Oo Fl rf Oc Ar file ...
+.It Nm rm Oo Fl rf Oc Ar FILE ...
 Delete files and directories.
-.It Nm mv Ar source target
+.It Nm mv Ar SOURCE TARGET
 Move or rename files.
-.It Nm cp Oo Fl R Oc Ar source target
+.It Nm cp Oo Fl R Oc Ar SOURCE TARGET
 Copy a file or directory.
-.It Nm ln Ar source target
+.It Nm ln Ar SOURCE TARGET
 Create a symbolic link.
 .It Nm pwd
 Print (current) working directory
-.It Nm touch Ar file ...
+.It Nm touch Ar FILE ...
 Create files and update access/modification timestamps.
-.It Nm mkdir Oo Fl p Oc Ar dir ...
+.It Nm mkdir Oo Fl p Oc Ar DIR ...
 Create directories
-.It Nm realpath Op Ar path ...
+.It Nm realpath Op Ar PATH ...
 Return resolved physical path.
 .It Nm whoami
 Print the effective user ID 
 .It Nm hostname
 Print the system's host name
-.It Nm du Oo Fl sh Oc Op Ar file ...
+.It Nm du Oo Fl sh Oc Op Ar FILE ...
 Display disk usage on file systems. To print non-recursively in a human readable format, use `du -sh [file]`.
 .El
 
 .Sh archive-utils
 .Bl -tag
-.It Nm zip Oo Fl re Oc Ar archive file ...
+.It Nm zip Oo Fl re Oc Ar ARCHIVE FILE ...
 Package and compress files into a ZIP archive.
-.It Nm unzip Ar archive ...
+.It Nm unzip Ar ARCHIVE ...
 Extract files from a ZIP archive.
-.It Nm gzip Oo Fl ldk Oc Ar file
+.It Nm gzip Oo Fl ldk Oc Ar FILE
 Compress/uncompress files with gzip compression. By default, the input file is replaced. To keep the original file, use the '--keep' option.
 .It Nm tar
 General purpose archiving utility.
@@ -53,33 +53,33 @@ General purpose archiving utility.
 
 .Sh text-utils
 .Bl -tag
-.It Nm cat Oo Fl n Oc Ar file
+.It Nm cat Oo Fl n Oc Ar FILE
 Print file content to STDOUT. Name derived from concatenate.
-.It Nm less Ar file
+.It Nm less Ar FILE
 Display and navigate file content in a terminal pager.
-.It Nm head Oo Fl n Oc Ar file
+.It Nm head Oo Fl n Oc Ar FILE
 Print the first lines of a file.
-.It Nm tail Oo Fl n Oc Ar file
+.It Nm tail Oo Fl n Oc Ar FILE
 Print the last lines of a file.
 .El
 
 .Sh file-utils
 .Bl -tag
-.It Nm mediainfo Oo Fl f Oc Ar file
+.It Nm mediainfo Oo Fl f Oc Ar FILE
 Print information about a file.
-.It Nm exiftool Ar file
+.It Nm exiftool Ar FILE
 Print information about a file.
-.It Nm pandoc Oo Fl -from Ar format | Fl -to Ar format Oc Ar file
+.It Nm pandoc Oo Fl -from Ar FORMAT | Fl -to Ar FORMAT Oc Ar FILE
 Convert from one markup format into another.
 .El
 
 .Sh search-utils 
 .Bl -tag
-.It Nm find Ar root Op Ar expression
+.It Nm find Ar root Op Ar PATTERN
 Find files or directories recursively in a specified root directory. To search for a filename, use `find /path/to/dir -name *[file-name]*`
-.It Nm locate Oo Fl i Oc Ar expression ...
+.It Nm locate Oo Fl i Oc Ar PATTERN ...
 Find filenames quickly. `locate` searches in a database prepared by `locate updatedb`. `locate` does not check whether the files in the database still exist. `locate` cannot report files created after the most recent update of the database.
-.It Nm grep Do Ar expression Dc Ar file
+.It Nm grep Ar PATTERN Ar FILE
 Search for a pattern in files or strings using regular expressions.
 .It Nm fzf 
 Fuzzy Finder
@@ -91,40 +91,42 @@ Fuzzy Finder
 Show and manipulate network devices, interfaces and tunnels. To display the host's ip addresses, use `ìp addr`
 .It Nm ifconfig Oo Ar interface Oc Oo Ar parameters Oc
 Show and configure network devices.
-.It Nm ping Oo Fl icf Oc Ar host
+.It Nm ping Oo Fl icf Oc Ar HOST
 send ICMP echo-requests to network hosts.
-.It Nm rsync Oo Fl azP Oc Ar source destination
+.It Nm wget Oo Fl c Oc Ar URL
+Download files from the web.
+.It Nm rsync Oo Fl azP Oc Ar SOURCE TARGET
 Transfer and synchronize files between local and remote hosts. 
-.It Nm ssh Ar username@host
+.It Nm ssh Ar USERNAME@HOST
 ssh to remote host
-.It Nm dig Ar domain 
+.It Nm dig Ar DOMAIN 
 Get DNS for domain
 .El
 
 .Sh sys-utils
-.Bl -tag -width -indent
-.It Nm chgrp
+.Bl -tag
+.It Nm chgrp Oo Ar OPTION Oc Ar GROUP FILE ...
 Change file group ownership.
-.It Nm chown
+.It Nm chown Oo Ar OPTION Oc Oo Ar OWNER Oc Ar FILE 
 Change file ownership.
-.It Nm chmod
+.It Nm chmod Oo Ar OPTION Oc Ar MODE FILE
 Change the permissions of a file or directory.
-.It Nm useradd
-.It Nm usermod
-.It Nm userdel
-.It Nm groupadd
-.It Nm groupmod
-.It Nm groupdel
-.It Nm chgroup
-.It Nm chpasswd
-.It Nm chuser
-.It Nm lsuser
-.It Nm lsgroup
-.It Nm mkgroup
-.It Nm mkuser
-.It Nm rmgroup
-.It Nm rmuser
+.It Nm useradd Oo Ar OPTIONS Oc Ar LOGIN
+Create a new user.
+.It Nm usermod Oo Ar OPTIONS Oc Ar LOGIN
+Modify a user account.
+.It Nm userdel Oo Ar OPTIONS Oc LOGIN
+Delete a user account and related files.
+.It Nm groupadd Oo Ar OPTIONS Oc Ar NEWGROUP
+Create a new group.
+.It Nm groupmod Oo Ar OPTIONS Oc Ar GROUP
+Modify a group definition on the system.
+.It Nm groupdel Oo Ar OPTIONS Oc Ar GROUP
+Delete a group
+.It Nm chpasswd Op Ar OPTIONS
+Update passwords in batch mode
 .It Nm passwd
+Update user's authentication tokens
 .El
 
 .Sh List Users and Groups
@@ -175,8 +177,6 @@ CLI file manager.
 CLI file manager.
 .It Nm disown
 Launch a terminal application in the background. Similar to nohup.
-.It Nm wget Oo Fl c Oc Ar url
-Download files from the web.
 .It Nm yt-dlp
 Download media from the internet.
 .It Nm ffmpeg
