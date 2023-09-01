@@ -75,7 +75,6 @@ Print information about a file.
 #### `pandoc`
 Convert from one markup format into another.
 
-
 ### SEARCH-UTILS
 ---
 #### `find`
@@ -101,6 +100,8 @@ Transfer and synchronize files between local and remote hosts.
 
 ### SYS-UTILS
 ---
+#### `mount`
+#### `umount`
 #### `chgrp`
 Change file group ownership.
 #### `chown`
@@ -149,18 +150,17 @@ User account information is stored in `/etc/passwd`. Group account information i
 
 - `yt-dlp` : download media from the internet.
 - `ffmpeg` : audio and video converter.
-- `musikcube` : music player.
+- `ffprove`
+- `ffplay`
 
 ## TROUBELSHOOTING
 - `inxi -F` : print system information 
 - `lscpu` : list cpu information.
 - `lshw` : list hardware information
 - `lspci`  : list PCI devices.
-- `lsusb`  : list USB devices.
 - `lsblk` : list block devices (storage).
 - `lsusb` : List USB buses and devices.
 - `lsscsi` : List scsi Devices
- 
 - `dmesg` : print kernel ring buffer
 
 ## DISPLAY LOGS

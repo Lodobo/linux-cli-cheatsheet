@@ -1,0 +1,266 @@
+.\" Automatically generated from an mdoc input file.  Do not edit.
+.TH "help" "1" "8/4/10" "Darwin" "General Commands Manual"
+.nh
+.if n .ad l
+.SH "manpages"
+.TP 2n
+\fBman\fR [\fIprogram\fR]
+The man utility finds and displays online manual documentation pages. Man pages include descriptions, applicable options, flags, examples, and other informative sections.
+.TP 2n
+\fBtldr\fR [\fIprogram\fR]
+The tldr-project is a collection of community-maintained help pages for command-line tools that aims to be a simpler, more approachable complement to traditional man pages. tldr pages are focused on practical examples.
+.PP
+.SH "core-utils"
+.TP 2n
+\fBcd\fR [\fIdir\fR]
+Change current working directory. If no directory is specified, the working directory is changed to the home directory of the current user.
+.TP 2n
+\fBls\fR [\fIdir\fR]
+List the files in a directory. To list all files, including hidden files, in a detailed format, use `ls -lah`.
+.TP 2n
+\fBrm\fR [\fB\-rf\fR] \fIfile ...\fR
+Delete files and directories.
+.TP 2n
+\fBmv\fR \fIsource target\fR
+Move or rename files.
+.TP 2n
+\fBcp\fR [\fB\-R\fR] \fIsource target\fR
+Copy a file or directory.
+.TP 2n
+\fBln\fR \fIsource target\fR
+Create a symbolic link.
+.TP 2n
+\fBpwd\fR
+Print (current) working directory
+.TP 2n
+\fBtouch\fR \fIfile ...\fR
+Create files and update access/modification timestamps.
+.TP 2n
+\fBmkdir\fR [\fB\-p\fR] \fIdir ...\fR
+Create directories
+.TP 2n
+\fBrealpath\fR [\fIpath ...\fR]
+Return resolved physical path.
+.TP 2n
+\fBwhoami\fR
+Print the effective user ID
+.TP 2n
+\fBhostname\fR
+Print the system's host name
+.TP 2n
+\fBdu\fR [\fB\-sh\fR] [\fIfile ...\fR]
+Display disk usage on file systems. To print non-recursively in a human readable format, use `du -sh [file]`.
+.PP
+.SH "archive-utils"
+.TP 2n
+\fBzip\fR [\fB\-re\fR] \fIarchive file ...\fR
+Package and compress files into a ZIP archive.
+.TP 2n
+\fBunzip\fR \fIarchive ...\fR
+Extract files from a ZIP archive.
+.TP 2n
+\fBgzip\fR [\fB\-ldk\fR] \fIfile\fR
+Compress/uncompress files with gzip compression. By default, the input file is replaced. To keep the original file, use the '--keep' option.
+.TP 2n
+\fBtar\fR
+General purpose archiving utility.
+.PP
+.SH "text-utils"
+.TP 2n
+\fBcat\fR [\fB\-n\fR] \fIfile\fR
+Print file content to STDOUT. Name derived from concatenate.
+.TP 2n
+\fBless\fR \fIfile\fR
+Display and navigate file content in a terminal pager.
+.TP 2n
+\fBhead\fR [\fB\-n\fR] \fIfile\fR
+Print the first lines of a file.
+.TP 2n
+\fBtail\fR [\fB\-n\fR] \fIfile\fR
+Print the last lines of a file.
+.PP
+.SH "file-utils"
+.TP 2n
+\fBmediainfo\fR [\fB\-f\fR] \fIfile\fR
+Print information about a file.
+.TP 2n
+\fBexiftool\fR \fIfile\fR
+Print information about a file.
+.TP 2n
+\fBpandoc\fR [\fB\--from\fR \fIformat\fR | \fB\--to\fR \fIformat\fR] \fIfile\fR
+Convert from one markup format into another.
+.PP
+.SH "search-utils"
+.TP 2n
+\fBfind\fR \fIroot\fR [\fIexpression\fR]
+Find files or directories recursively in a specified root directory. To search for a filename, use `find /path/to/dir -name *[file-name]*`
+.TP 2n
+\fBlocate\fR [\fB\-i\fR] \fIexpression ...\fR
+Find filenames quickly. `locate` searches in a database prepared by `locate updatedb`. `locate` does not check whether the files in the database still exist. `locate` cannot report files created after the most recent update of the database.
+.TP 2n
+\fBgrep\fR \(lq\fIexpression\fR\(rq \fIfile\fR
+Search for a pattern in files or strings using regular expressions.
+.TP 2n
+\fBfzf\fR
+Fuzzy Finder
+.PP
+.SH "net-utils"
+.TP 2n
+\fBip\fR
+Show and manipulate network devices, interfaces and tunnels. To display the host's ip addresses, use `\[u00EC]p addr`
+.TP 2n
+\fBifconfig\fR [\fIinterface\fR] [\fIparameters\fR]
+Show and configure network devices.
+.TP 2n
+\fBping\fR [\fB\-icf\fR] \fIhost\fR
+send ICMP echo-requests to network hosts.
+.TP 2n
+\fBrsync\fR [\fB\-azP\fR] \fIsource destination\fR
+Transfer and synchronize files between local and remote hosts.
+.PP
+.SH "sys-utils"
+.TP 9n
+\fBchgrp\fR
+Change file group ownership.
+.TP 9n
+\fBchown\fR
+Change file ownership.
+.TP 9n
+\fBchmod\fR
+Change the permissions of a file or directory.
+.TP 9n
+\fBuseradd\fR
+.TP 9n
+\fBusermod\fR
+.TP 9n
+\fBuserdel\fR
+.TP 9n
+\fBgroupadd\fR
+.br
+.TP 9n
+\fBgroupmod\fR
+.br
+.TP 9n
+\fBgroupdel\fR
+.br
+.TP 9n
+\fBchgroup\fR
+.TP 9n
+\fBchpasswd\fR
+.br
+.TP 9n
+\fBchuser\fR
+.TP 9n
+\fBlsuser\fR
+.TP 9n
+\fBlsgroup\fR
+.TP 9n
+\fBmkgroup\fR
+.TP 9n
+\fBmkuser\fR
+.TP 9n
+\fBrmgroup\fR
+.TP 9n
+\fBrmuser\fR
+.TP 9n
+\fBpasswd\fR
+.PP
+.SH "List Users and Groups"
+User account information is stored in
+\fI/etc/passwd\fR.
+.PP
+Group account information is stored in
+\fI/etc/group\fR.
+.PP
+A list of users and groups can be found inside these files.
+.sp
+.SH "package management"
+.TP 9n
+\fBapt\fR
+APT (Advanced Package Tool), is a package manager for Debian-based Linux distributions.
+.TP 9n
+\fBdpkg\fR
+dpkg (Debian Package) is a low-level package manager for Debian-based Linux distrutions. `dpkg` is used to install, remove, and provide information about `.deb` packages.
+.TP 9n
+\fBdnf\fR
+dnf (Dandified YUM) is a package manager for rpm-based Linux distributions such as RHEL, Fedora, and CentOS. It is a sucessor to yum (Yellowdog Updater, Modified).
+.TP 9n
+\fBzypper\fR
+Zypper is a package manager for openSuse.
+.TP 9n
+\fBpacman\fR
+Pacman is a package manager for arch-based distributions.
+.TP 9n
+\fByay\fR
+Yay (Yet Another Yogurt) is an AUR-helper for arch-based distributions written in Go.
+.TP 9n
+\fBparu\fR
+Paru is an AUR-helper for arch-based distributions written in Rust.
+.TP 9n
+\fBflatpak\fR
+Flatpak is a software utility for packaging and distributing applications to a wide range of Linux distributions.
+.TP 9n
+\fBsnap\fR
+Snap is a software packaging and deployment system developed by Canonical. The packages, called snaps, and the tool for using them, snapd, work across a range of Linux distributions.
+.PP
+.SH "CLI programs"
+.TP 9n
+\fBhtop\fR
+CLI task manager.
+.TP 9n
+\fBnano\fR
+CLI text editor.
+.TP 9n
+\fBvim\fR
+CLI text editor.
+CLI text editor inspired by Kakoune.
+.TP 9n
+\fBjoshuto\fR
+CLI file manager.
+CLI file manager.
+.TP 9n
+\fBdisown\fR
+Launch a terminal application in the background. Similar to nohup.
+.TP 9n
+\fByt-dlp\fR
+Download media from the internet.
+.TP 9n
+\fBffmpeg\fR
+Audio and video converter.
+.TP 9n
+\fBffprobe\fR
+Multimedia stream analyzer.
+.TP 9n
+\fBffplay\fR
+A simple and portable media player.
+.PP
+.SH "troubleshooting"
+.TP 9n
+\fBinxi\fR
+Display system information.
+.TP 9n
+\fBlscpu\fR
+List cpu information
+.TP 9n
+\fBlshw\fR
+List hardware information.
+.TP 9n
+\fBlspci\fR
+List PCI devices.
+.TP 9n
+\fBlsusb\fR
+List USB devices.
+.TP 9n
+\fBlsblk\fR
+List block (storage) devices.
+.TP 9n
+\fBlsscsi\fR
+List SCSI devices.
+.TP 9n
+\fBdmesg\fR
+dmesg (diagnostic message) is a utility for displaying kernel ring buffer messages. It provides a way to access and view system and hardware-related messages generated by the kernel during the boot process and while the system is running.
+.PP
+.SH "display logs"
+Logs are stored in
+\fI/var/log\fR,
+to display the logs, use the `less` command
