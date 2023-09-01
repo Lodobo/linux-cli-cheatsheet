@@ -10,5 +10,9 @@ wget -P ~/.local/share https://raw.githubusercontent.com/Lodobo/linux-help-pages
 
 Create alias in ~/.bashrc
 ```sh
-alias help="man ~/.local/share/help.man"
+## Using a local file:
+alias h="man ~/.local/share/help.man"
+
+## or fetch from repo:
+alias h="curl -sL 'https://raw.githubusercontent.com/Lodobo/linux-help-pages/main/files/help.man' | man -l -"
 ```
