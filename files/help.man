@@ -55,7 +55,7 @@ Display disk usage on file systems. To print non-recursively in a human readable
 .SH "ARCHIVE-UTILS"
 .TP 2n
 \fBzip\fR [\fB\-re\fR] \fIARCHIVE FILE ...\fR
-  Package and compress files into a ZIP archive.
+Package and compress files into a ZIP archive.
 .sp
   Add files to archive
   $ zip -r archive.zip dir_1 file_1 file_2
@@ -64,7 +64,7 @@ Display disk usage on file systems. To print non-recursively in a human readable
   $ zip -r -9 archive.zip file_1 file_2
 .TP 2n
 \fBunzip\fR [\fB\-l\fR] \fIARCHIVE ...\fR
-  Extract files from a ZIP archive
+Extract files from a ZIP archive
 .sp
   Unzip into current directory
   $ unzip  archive.zip
@@ -76,7 +76,7 @@ Display disk usage on file systems. To print non-recursively in a human readable
   $ unzip -l archive.zip
 .TP 2n
 \fBtar\fR
-  General purpose archiving utility.
+General purpose archiving utility.
 .sp
   Create an archive
   $ tar cf archive.tar file_1 file_2
@@ -112,7 +112,7 @@ Convert from one markup format into another.
 .SH "SEARCH-UTILS"
 .TP 2n
 \fBfind\fR \fIroot\fR [\fIPATTERN\fR]
-  Find files or directories recursively in a specified root directory. To search for a filename, use `find /path/to/dir -name *[file-name]*`
+Find files or directories recursively in a specified root directory. To search for a filename, use `find /path/to/dir -name *[file-name]*`
 .sp
   Find files by filename. Case-insensitive.
   $ find ~/Documents -iname "*filename*"
@@ -127,13 +127,13 @@ Convert from one markup format into another.
 Find filenames quickly. `locate` searches in a database prepared by `locate updatedb`. `locate` does not check whether the files in the database still exist. `locate` cannot report files created after the most recent update of the database.
 .TP 2n
 \fBgrep\fR \fIPATTERN\fR \fIFILE\fR
-  Search for a pattern in files or strings using regular expressions.
+Search for a pattern in files or strings using regular expressions.
 .sp
   Search `stdin` for lines that match a pattern
   $ cat file.txt | grep "search_pattern"
 .TP 2n
 \fBsk\fR
-Fuzzy finder written in rust. See also, `fzf`.
+sk (Skim) is a Fuzzy finder written in rust. See also, `fzf`.
 .PP
 .SH "NET-UTILS"
 .TP 2n
@@ -158,6 +158,9 @@ ssh to remote host
 .TP 2n
 \fBdig\fR \fIDOMAIN\fR
 Get DNS for domain
+.TP 2n
+\fBnmap\fR
+Network exploration tool and security / port scanner
 .PP
 .SH "SYS-UTILS"
 .TP 2n
@@ -242,10 +245,14 @@ CLI text editor.
 .TP 9n
 \fBvim\fR
 CLI text editor.
+.TP 9n
+\fBhx\fR
 CLI text editor inspired by Kakoune.
 .TP 9n
 \fBjoshuto\fR
 CLI file manager.
+.TP 9n
+\fBranger\fR
 CLI file manager.
 .TP 9n
 \fBdisown\fR

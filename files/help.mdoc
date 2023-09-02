@@ -43,15 +43,15 @@ Display disk usage on file systems. To print non-recursively in a human readable
 .Sh ARCHIVE-UTILS
 .Bl -tag
 .It Nm zip Oo Fl re Oc Ar ARCHIVE FILE ...
-  Package and compress files into a ZIP archive.
+Package and compress files into a ZIP archive.
 
   Add files to archive
   $ zip -r archive.zip dir_1 file_1 file_2
 
-  Indicate the compression level. Bigger number -> more compression
+  Select compression level. Bigger number -> more compression
   $ zip -r -9 archive.zip file_1 file_2
 .It Nm unzip Oo Fl l Oc Ar ARCHIVE ...
-  Extract files from a ZIP archive
+Extract files from a ZIP archive
 
   Unzip into current directory
   $ unzip  archive.zip
@@ -62,7 +62,7 @@ Display disk usage on file systems. To print non-recursively in a human readable
   List the contents of a specific archive without extracting them
   $ unzip -l archive.zip
 .It Nm tar
-  General purpose archiving utility.
+General purpose archiving utility.
 
   Create an archive
   $ tar cf archive.tar file_1 file_2
@@ -96,7 +96,7 @@ Convert from one markup format into another.
 .Sh SEARCH-UTILS 
 .Bl -tag
 .It Nm find Ar root Op Ar PATTERN
-  Find files or directories recursively in a specified root directory. To search for a filename, use `find /path/to/dir -name *[file-name]*`
+Find files or directories recursively in a specified root directory. To search for a filename, use `find /path/to/dir -name *[file-name]*`
 
   Find files by filename. Case-insensitive.
   $ find ~/Documents -iname "*filename*"
@@ -109,12 +109,12 @@ Convert from one markup format into another.
 .It Nm locate Oo Fl i Oc Ar PATTERN ...
 Find filenames quickly. `locate` searches in a database prepared by `locate updatedb`. `locate` does not check whether the files in the database still exist. `locate` cannot report files created after the most recent update of the database.
 .It Nm grep Ar PATTERN Ar FILE
-  Search for a pattern in files or strings using regular expressions.
+Search for a pattern in files or strings using regular expressions.
 
   Search `stdin` for lines that match a pattern
   $ cat file.txt | grep "search_pattern"
 .It Nm sk 
-Fuzzy finder written in rust. See also, `fzf`.
+sk (Skim) is a Fuzzy finder written in rust. See also, `fzf`.
 .El
 
 .Sh NET-UTILS
@@ -134,6 +134,8 @@ Transfer and synchronize files between local and remote hosts.
 ssh to remote host
 .It Nm dig Ar DOMAIN 
 Get DNS for domain
+.It Nm nmap
+Network exploration tool and security / port scanner
 .El
 
 .Sh SYS-UTILS
@@ -202,11 +204,11 @@ CLI task manager.
 CLI text editor.
 .It Nm vim
 CLI text editor.
-.it Nm hx
+.It Nm hx
 CLI text editor inspired by Kakoune.
 .It Nm joshuto
 CLI file manager.
-.it Nm ranger
+.It Nm ranger
 CLI file manager.
 .It Nm disown
 Launch a terminal application in the background. Similar to nohup.
