@@ -43,13 +43,32 @@ Display disk usage on file systems. To print non-recursively in a human readable
 .Sh ARCHIVE-UTILS
 .Bl -tag
 .It Nm zip Oo Fl re Oc Ar ARCHIVE FILE ...
-Package and compress files into a ZIP archive.
-.It Nm unzip Ar ARCHIVE ...
-Extract files from a ZIP archive.
-.It Nm gzip Oo Fl ldk Oc Ar FILE
-Compress/uncompress files with gzip compression. By default, the input file is replaced. To keep the original file, use the '--keep' option.
+  Package and compress files into a ZIP archive.
+
+  Add files to archive
+  $ zip -r archive.zip dir_1 file_1 file_2
+
+  Indicate the compression level. Bigger number -> more compression
+  $ zip -r -9 archive.zip file_1 file_2
+.It Nm unzip Oo Fl l Oc Ar ARCHIVE ...
+  Extract files from a ZIP archive
+
+  Unzip into current directory
+  $ unzip  archive.zip
+
+  Unzip to a specific path:
+  $ unzip archive.zip -d ~/Documents
+
+  List the contents of a specific archive without extracting them
+  $ unzip -l archive.zip
 .It Nm tar
-General purpose archiving utility.
+  General purpose archiving utility.
+
+  Create an archive
+  $ tar cf archive.tar file_1 file_2
+
+  Extract an archive into the current directory
+  $ tar xf archive.zip
 .El
 
 .Sh TEXT-UTILS
@@ -77,11 +96,23 @@ Convert from one markup format into another.
 .Sh SEARCH-UTILS 
 .Bl -tag
 .It Nm find Ar root Op Ar PATTERN
-Find files or directories recursively in a specified root directory. To search for a filename, use `find /path/to/dir -name *[file-name]*`
+  Find files or directories recursively in a specified root directory. To search for a filename, use `find /path/to/dir -name *[file-name]*`
+
+  Find files by filename. Case-insensitive.
+  $ find ~/Documents -iname "*filename*"
+
+  Find files by extension
+  $ find ~/Documents -name "*.txt"
+
+  Find directories. Case-sensitive.
+  $ find /home/ -type d -name "Music"
 .It Nm locate Oo Fl i Oc Ar PATTERN ...
 Find filenames quickly. `locate` searches in a database prepared by `locate updatedb`. `locate` does not check whether the files in the database still exist. `locate` cannot report files created after the most recent update of the database.
 .It Nm grep Ar PATTERN Ar FILE
-Search for a pattern in files or strings using regular expressions.
+  Search for a pattern in files or strings using regular expressions.
+
+  Search `stdin` for lines that match a pattern
+  $ cat file.txt | grep "search_pattern"
 .It Nm sk 
 Fuzzy finder written in rust. See also, `fzf`.
 .El
@@ -94,6 +125,7 @@ Show and manipulate network devices, interfaces and tunnels. To display the host
 Show and configure network devices.
 .It Nm ping Oo Fl icf Oc Ar HOST
 send ICMP echo-requests to network hosts.
+Ql ping 8.8.8.8
 .It Nm wget Oo Fl c Oc Ar URL
 Download files from the web.
 .It Nm rsync Oo Fl azP Oc Ar SOURCE TARGET
