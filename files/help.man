@@ -16,7 +16,7 @@ The tldr-project is a collection of community-maintained help pages for command-
 \fBcd\fR [\fIDIR\fR]
 Change current working directory. If no directory is specified, the working directory is changed to the home directory of the current user.
 .TP 2n
-\fBls\fR [\fIDIR\fR]
+\fBls\fR [\fB\-lah\fR] [\fIDIR\fR]
 List the files in a directory. To list all files, including hidden files, in a detailed format, use `ls -lah`.
 .TP 2n
 \fBrm\fR [\fB\-rf\fR] \fIFILE ...\fR
@@ -40,8 +40,14 @@ Create files and update access/modification timestamps.
 \fBmkdir\fR [\fB\-p\fR] \fIDIR ...\fR
 Create directories
 .TP 2n
+\fBdu\fR [\fB\-sh\fR] [\fIFILE ...\fR]
+Display disk usage on file systems. To print non-recursively in a human readable format, use `du -sh [file]`.
+.TP 2n
 \fBrealpath\fR [\fIPATH ...\fR]
 Return resolved physical path.
+.TP 2n
+\fBwhich\fR [\fIEXECUTABLE\fR]
+Locate and display the location of a program file in the user's path.
 .TP 2n
 \fBwhoami\fR
 Print the effective user ID
@@ -49,8 +55,14 @@ Print the effective user ID
 \fBhostname\fR
 Print the system's host name
 .TP 2n
-\fBdu\fR [\fB\-sh\fR] [\fIFILE ...\fR]
-Display disk usage on file systems. To print non-recursively in a human readable format, use `du -sh [file]`.
+\fBtop\fR
+Display processes.
+.TP 2n
+\fBkill\fR [-s SIGNAL_NAME] \fIPID ...\fR
+Terminate processes  by PID.
+.TP 2n
+\fBkillall\fR [-SIGNAL] \fIPROCNAME ...\fR
+Terminate processes by name.
 .PP
 .SH "ARCHIVE-UTILS"
 .TP 2n
@@ -60,7 +72,7 @@ Package and compress files into a ZIP archive.
   Add files to archive
   $ zip -r archive.zip dir_1 file_1 file_2
 .sp
-  Indicate the compression level. Bigger number -> more compression
+  Select compression level. Bigger number -> more compression
   $ zip -r -9 archive.zip file_1 file_2
 .TP 2n
 \fBunzip\fR [\fB\-l\fR] \fIARCHIVE ...\fR
@@ -112,12 +124,12 @@ Convert from one markup format into another.
 .SH "SEARCH-UTILS"
 .TP 2n
 \fBfind\fR \fIroot\fR [\fIPATTERN\fR]
-Find files or directories recursively in a specified root directory. To search for a filename, use `find /path/to/dir -name *[file-name]*`
+Find files or directories recursively in a specified root directory.
 .sp
   Find files by filename. Case-insensitive.
   $ find ~/Documents -iname "*filename*"
 .sp
-  Find files by extension
+  Find files by extension.
   $ find ~/Documents -name "*.txt"
 .sp
   Find directories. Case-sensitive.
@@ -144,8 +156,10 @@ Show and manipulate network devices, interfaces and tunnels. To display the host
 Show and configure network devices.
 .TP 2n
 \fBping\fR [\fB\-icf\fR] \fIHOST\fR
-send ICMP echo-requests to network hosts.
-Ql ping 8.8.8.8
+Send ICMP echo-requests to network hosts.
+.sp
+  Ping Google's dns server
+  $ ping 8.8.8.8
 .TP 2n
 \fBwget\fR [\fB\-c\fR] \fIURL\fR
 Download files from the web.

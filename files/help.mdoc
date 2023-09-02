@@ -14,7 +14,7 @@ The tldr-project is a collection of community-maintained help pages for command-
 .Bl -tag
 .It Nm cd Op Ar DIR
 Change current working directory. If no directory is specified, the working directory is changed to the home directory of the current user.
-.It Nm ls Op Ar DIR
+.It Nm ls Oo Fl lah Oc Op Ar DIR
 List the files in a directory. To list all files, including hidden files, in a detailed format, use `ls -lah`.
 .It Nm rm Oo Fl rf Oc Ar FILE ...
 Delete files and directories.
@@ -30,14 +30,22 @@ Print (current) working directory
 Create files and update access/modification timestamps.
 .It Nm mkdir Oo Fl p Oc Ar DIR ...
 Create directories
+.It Nm du Oo Fl sh Oc Op Ar FILE ...
+Display disk usage on file systems. To print non-recursively in a human readable format, use `du -sh [file]`.
 .It Nm realpath Op Ar PATH ...
 Return resolved physical path.
+.It Nm which Op Ar EXECUTABLE
+Locate and display the location of a program file in the user's path.
 .It Nm whoami
 Print the effective user ID 
 .It Nm hostname
 Print the system's host name
-.It Nm du Oo Fl sh Oc Op Ar FILE ...
-Display disk usage on file systems. To print non-recursively in a human readable format, use `du -sh [file]`.
+.It Nm top
+Display processes.
+.It Nm kill Oo -s SIGNAL_NAME Oc Ar PID ...
+Terminate processes  by PID.
+.It Nm killall Oo -SIGNAL Oc Ar PROCNAME ...
+Terminate processes by name.
 .El
 
 .Sh ARCHIVE-UTILS
@@ -96,12 +104,12 @@ Convert from one markup format into another.
 .Sh SEARCH-UTILS 
 .Bl -tag
 .It Nm find Ar root Op Ar PATTERN
-Find files or directories recursively in a specified root directory. To search for a filename, use `find /path/to/dir -name *[file-name]*`
+Find files or directories recursively in a specified root directory.
 
   Find files by filename. Case-insensitive.
   $ find ~/Documents -iname "*filename*"
 
-  Find files by extension
+  Find files by extension.
   $ find ~/Documents -name "*.txt"
 
   Find directories. Case-sensitive.
@@ -124,8 +132,10 @@ Show and manipulate network devices, interfaces and tunnels. To display the host
 .It Nm ifconfig Oo Ar INTERFACE Oc Oo Ar PARAMETERS Oc
 Show and configure network devices.
 .It Nm ping Oo Fl icf Oc Ar HOST
-send ICMP echo-requests to network hosts.
-Ql ping 8.8.8.8
+Send ICMP echo-requests to network hosts.
+
+  Ping Google's dns server
+  $ ping 8.8.8.8
 .It Nm wget Oo Fl c Oc Ar URL
 Download files from the web.
 .It Nm rsync Oo Fl azP Oc Ar SOURCE TARGET
