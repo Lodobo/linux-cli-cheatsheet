@@ -150,7 +150,10 @@ sk (Skim) is a Fuzzy finder written in rust. See also, `fzf`.
 .SH "NET-UTILS"
 .TP 2n
 \fBip\fR
-Show and manipulate network devices, interfaces and tunnels. To display the host's ip addresses, use `ip addr`
+Show and manipulate network devices, interfaces and tunnels.
+.sp
+  Display the host's IP address:
+  $ ip addr
 .TP 2n
 \fBifconfig\fR [\fIINTERFACE\fR] [\fIPARAMETERS\fR]
 Show and configure network devices.
@@ -163,6 +166,9 @@ Send ICMP echo-requests to network hosts.
 .TP 2n
 \fBwget\fR [\fB\-c\fR] \fIURL\fR
 Download files from the web.
+.sp
+  Continue downloading a partially downloaded file:
+  $ wget -c "www.fileserver.com/files/archive.zip"
 .TP 2n
 \fBrsync\fR [\fB\-azP\fR] \fISOURCE TARGET\fR
 Transfer and synchronize files between local and remote hosts.
@@ -171,21 +177,33 @@ Transfer and synchronize files between local and remote hosts.
 ssh to remote host
 .TP 2n
 \fBdig\fR \fIDOMAIN\fR
-Get DNS for domain
+Perform DNS lookups for a domain.
 .TP 2n
 \fBnmap\fR
 Network exploration tool and security / port scanner
 .PP
 .SH "SYS-UTILS"
 .TP 2n
+\fBchmod\fR [\fIOPTION\fR] \fIMODE FILE\fR
+Change the permissions of a file or directory.
+.sp
+  Give the [u]ser who owns the file the right to [r]ead [w]rite and e[x]ecute:
+  $ chmod u+rwx script.sh
+.sp
+  Give read permissions to [g]roup:
+  $ chmod g+r script.sh
+.sp
+  Remove execute permissions from [o]thers:
+  $ chmod o-x script.sh
+.sp
+  Change permissions recursively:
+  $ chmod -R u+r script.sh
+.TP 2n
 \fBchgrp\fR [\fIOPTION\fR] \fIGROUP FILE ...\fR
 Change file group ownership.
 .TP 2n
 \fBchown\fR [\fIOPTION\fR] [\fIOWNER\fR] \fIFILE\fR
 Change file ownership.
-.TP 2n
-\fBchmod\fR [\fIOPTION\fR] \fIMODE FILE\fR
-Change the permissions of a file or directory.
 .TP 2n
 \fBuseradd\fR [\fIOPTIONS\fR] \fILOGIN\fR
 Create a new user.
@@ -208,7 +226,7 @@ Delete a group
 \fBchpasswd\fR [\fIOPTIONS\fR]
 Update passwords in batch mode
 .TP 2n
-\fBpasswd\fR
+\fBpasswd\fR [\fIUSERNAME\fR]
 Update user's authentication tokens
 .PP
 .SH "LIST USERS AND GROUPS"
@@ -317,3 +335,4 @@ dmesg (diagnostic message) is a utility for displaying kernel ring buffer messag
 Logs are stored in
 \fI/var/log\fR,
 to display the logs, use the `less` command
+.sp

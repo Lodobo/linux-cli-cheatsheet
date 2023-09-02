@@ -128,7 +128,10 @@ sk (Skim) is a Fuzzy finder written in rust. See also, `fzf`.
 .Sh NET-UTILS
 .Bl -tag
 .It Nm ip
-Show and manipulate network devices, interfaces and tunnels. To display the host's ip addresses, use `ip addr`
+Show and manipulate network devices, interfaces and tunnels.
+  
+  Display the host's IP address:
+  $ ip addr
 .It Nm ifconfig Oo Ar INTERFACE Oc Oo Ar PARAMETERS Oc
 Show and configure network devices.
 .It Nm ping Oo Fl icf Oc Ar HOST
@@ -138,24 +141,39 @@ Send ICMP echo-requests to network hosts.
   $ ping 8.8.8.8
 .It Nm wget Oo Fl c Oc Ar URL
 Download files from the web.
+
+  Continue downloading a partially downloaded file:
+  $ wget -c "www.fileserver.com/files/archive.zip"
 .It Nm rsync Oo Fl azP Oc Ar SOURCE TARGET
 Transfer and synchronize files between local and remote hosts. 
 .It Nm ssh Ar USERNAME@HOST
 ssh to remote host
 .It Nm dig Ar DOMAIN 
-Get DNS for domain
+Perform DNS lookups for a domain.
 .It Nm nmap
 Network exploration tool and security / port scanner
 .El
 
 .Sh SYS-UTILS
 .Bl -tag
+.It Nm chmod Oo Ar OPTION Oc Ar MODE FILE
+Change the permissions of a file or directory.
+
+  Give the [u]ser who owns the file the right to [r]ead [w]rite and e[x]ecute:
+  $ chmod u+rwx script.sh
+
+  Give read permissions to [g]roup:
+  $ chmod g+r script.sh
+
+  Remove execute permissions from [o]thers:
+  $ chmod o-x script.sh
+
+  Change permissions recursively:
+  $ chmod -R u+r script.sh 
 .It Nm chgrp Oo Ar OPTION Oc Ar GROUP FILE ...
 Change file group ownership.
 .It Nm chown Oo Ar OPTION Oc Oo Ar OWNER Oc Ar FILE 
 Change file ownership.
-.It Nm chmod Oo Ar OPTION Oc Ar MODE FILE
-Change the permissions of a file or directory.
 .It Nm useradd Oo Ar OPTIONS Oc Ar LOGIN
 Create a new user.
 .It Nm usermod Oo Ar OPTIONS Oc Ar LOGIN
@@ -170,7 +188,7 @@ Modify a group definition on the system.
 Delete a group
 .It Nm chpasswd Op Ar OPTIONS
 Update passwords in batch mode
-.It Nm passwd
+.It Nm passwd Op Ar USERNAME
 Update user's authentication tokens
 .El
 
