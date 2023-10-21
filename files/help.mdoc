@@ -169,7 +169,7 @@ Change the permissions of a file or directory.
   $ chmod o-x script.sh
 
   Change permissions recursively:
-  $ chmod -R u+r script.sh 
+  $ chmod -R u+r new_dir 
 .It Nm chgrp Oo Ar OPTION Oc Ar GROUP FILE ...
 Change file group ownership.
 .It Nm chown Oo Ar OPTION Oc Oo Ar OWNER Oc Ar FILE 
@@ -190,6 +190,8 @@ Delete a group
 Update passwords in batch mode
 .It Nm passwd Op Ar USERNAME
 Update user's authentication tokens
+.It Nm Fuser
+List process IDs of all processes that have one or more files open. Use for trouble-shooting busy devices and ports.
 .El
 
 .Sh LIST USERS AND GROUPS
@@ -276,4 +278,4 @@ dmesg (diagnostic message) is a utility for displaying kernel ring buffer messag
 .Pp
 Logs are stored in
 .Pa /var/log ,
-to display the logs, use the `less` command
+to display the logs, use the `less` command. With systemd you can also use the `journaltcl` command.

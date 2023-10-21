@@ -94,7 +94,7 @@ General purpose archiving utility.
   $ tar cf archive.tar file_1 file_2
 .sp
   Extract an archive into the current directory
-  $ tar xf archive.zip
+  $ tar xf archive.tar
 .PP
 .SH "TEXT-UTILS"
 .TP 2n
@@ -197,7 +197,7 @@ Change the permissions of a file or directory.
   $ chmod o-x script.sh
 .sp
   Change permissions recursively:
-  $ chmod -R u+r script.sh
+  $ chmod -R u+r new_dir
 .TP 2n
 \fBchgrp\fR [\fIOPTION\fR] \fIGROUP FILE ...\fR
 Change file group ownership.
@@ -228,6 +228,9 @@ Update passwords in batch mode
 .TP 2n
 \fBpasswd\fR [\fIUSERNAME\fR]
 Update user's authentication tokens
+.TP 2n
+\fBFuser\fR
+List process IDs of all processes that have one or more files open. Use for trouble-shooting busy devices and ports.
 .PP
 .SH "LIST USERS AND GROUPS"
 User account information is stored in
@@ -334,5 +337,4 @@ dmesg (diagnostic message) is a utility for displaying kernel ring buffer messag
 .SH "LOGS"
 Logs are stored in
 \fI/var/log\fR,
-to display the logs, use the `less` command
-.sp
+to display the logs, use the `less` command. With systemd you can also use the `journaltcl` command.
