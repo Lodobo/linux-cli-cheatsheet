@@ -22,7 +22,7 @@ alias h="curl -sL 'https://raw.githubusercontent.com/Lodobo/linux-help-pages/mai
 ```
 
 ## How to contribute or modify.
-Use the mandoc command to preview the .mdoc file or to convert it to other formats. Documentation for mandoc cam be found [here](https://mandoc.bsd.lv/man/mandoc.1.html). mdoc files use the mdoc syntax, which is a subset of roff. mdoc is easier to work with compared to roff. Documentation for mdoc syntax can be found [here](https://mandoc.bsd.lv/man/mdoc.7.html).
+Use the mandoc command to preview the .mdoc file or to convert it to other formats. Documentation for mandoc can be found [here](https://mandoc.bsd.lv/man/mandoc.1.html). mdoc files use the mdoc syntax, which is a subset of roff. mdoc is easier to work with compared to roff. Documentation for mdoc syntax can be found [here](https://mandoc.bsd.lv/man/mdoc.7.html).
 
 Preview the mdoc file
 ```sh
