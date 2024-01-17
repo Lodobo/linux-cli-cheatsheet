@@ -6,11 +6,21 @@
 .TP 2n
 \fBman\fR [\fIPROGRAM\fR]
 The man utility finds and displays online manual documentation pages. Man pages include descriptions, applicable options, flags, examples, and other informative sections.
+.sp
+A command can have multiple man pages split into different sections.
+.sp
+  List all available sections for a command:
+  $ man --whatis ip
+.sp
+  Show the man page from a specific section:
+  $ man 7 ip
+.TP 2n
+\fBapropos\fR [\fIREGEX\fR]
+Search the manual pages for names and descriptions.
 .TP 2n
 \fBtldr\fR [\fIPROGRAM\fR]
 The tldr-project is a collection of community-maintained help pages for command-line tools that aims to be a simpler, more approachable complement to traditional man pages. tldr pages are focused on practical examples. To use tldr you can install the tealdear client at
 \fB`https://github.com/dbrgn/tealdeer`\fR
-.PP
 .SH "CORE-UTILS"
 .TP 2n
 \fBcd\fR [\fIDIR\fR]
@@ -197,7 +207,7 @@ Change the permissions of a file or directory.
   $ chmod o-x script.sh
 .sp
   Change permissions recursively:
-  $ chmod -R u+r new_dir
+  $ chmod -R u+r directory
 .TP 2n
 \fBchgrp\fR [\fIOPTION\fR] \fIGROUP FILE ...\fR
 Change file group ownership.
@@ -337,4 +347,4 @@ dmesg (diagnostic message) is a utility for displaying kernel ring buffer messag
 .SH "LOGS"
 Logs are stored in
 \fI/var/log\fR,
-to display the logs, use the `less` command. With systemd you can also use the `journaltcl` command.
+to display the logs, use the `less` command. With systemd you can also use the `journalctl` command.

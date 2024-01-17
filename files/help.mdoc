@@ -5,11 +5,20 @@
 .Bl -tag
 .It Nm man Op Ar PROGRAM
 The man utility finds and displays online manual documentation pages. Man pages include descriptions, applicable options, flags, examples, and other informative sections.
+
+A command can have multiple man pages split into different sections.
+  
+  List all available sections for a command:
+  $ man --whatis ip
+
+  Show the man page from a specific section:
+  $ man 7 ip
+.It Nm apropos Op Ar REGEX
+Search the manual pages for names and descriptions.
 .It Nm tldr Op Ar PROGRAM
 The tldr-project is a collection of community-maintained help pages for command-line tools that aims to be a simpler, more approachable complement to traditional man pages. tldr pages are focused on practical examples. To use tldr you can install the tealdear client at
 .Lk `https://github.com/dbrgn/tealdeer`
 .El
-
 .Sh CORE-UTILS
 .Bl -tag
 .It Nm cd Op Ar DIR
@@ -278,4 +287,4 @@ dmesg (diagnostic message) is a utility for displaying kernel ring buffer messag
 .Pp
 Logs are stored in
 .Pa /var/log ,
-to display the logs, use the `less` command. With systemd you can also use the `journaltcl` command.
+to display the logs, use the `less` command. With systemd you can also use the `journalctl` command.
