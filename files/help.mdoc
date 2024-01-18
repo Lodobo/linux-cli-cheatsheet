@@ -55,6 +55,13 @@ Display processes.
 Terminate processes  by PID.
 .It Nm killall Oo -SIGNAL Oc Ar PROCNAME ...
 Terminate processes by name.
+.It Nm pgrep Oo options Oc Ar pattern
+Look up processes using regex.
+.It Nm pkill Oo options Oc Ar pattern
+Kill processes using regex.
+
+  Kill a parent process and all its children:
+  $ pkill -P <pid>
 .El
 
 .Sh ARCHIVE-UTILS

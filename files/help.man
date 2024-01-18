@@ -73,6 +73,15 @@ Terminate processes  by PID.
 .TP 2n
 \fBkillall\fR [-SIGNAL] \fIPROCNAME ...\fR
 Terminate processes by name.
+.TP 2n
+\fBpgrep\fR [options] \fIpattern\fR
+Look up processes using regex.
+.TP 2n
+\fBpkill\fR [options] \fIpattern\fR
+Kill processes using regex.
+.sp
+  Kill a parent process and all its children:
+  $ pkill -P <pid>
 .PP
 .SH "ARCHIVE-UTILS"
 .TP 2n
