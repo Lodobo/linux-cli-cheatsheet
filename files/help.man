@@ -232,7 +232,6 @@ Modify a user account.
 .sp
   Add user to group
   $ usermod -a -G groupname username
-.sp
 .TP 2n
 \fBuserdel\fR [\fIOPTIONS\fR] LOGIN
 Delete a user account and related files.
@@ -246,7 +245,12 @@ Modify a group definition on the system.
 \fBgroupdel\fR [\fIOPTIONS\fR] \fIGROUP\fR
 Delete a group
 .TP 2n
-\fBchpasswd\fR [\fIOPTIONS\fR]
+\fBgpasswd\fR [\fIOPTION\fR] \fIGROUP\fR
+.sp
+  Define group admins:
+.sp
+  Set the list of group members
+  .It Nm chpasswd Op Ar OPTIONS
 Update passwords in batch mode
 .TP 2n
 \fBpasswd\fR [\fIUSERNAME\fR]
