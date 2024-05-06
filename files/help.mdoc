@@ -178,6 +178,10 @@ Change file ownership.
 Create a new user.
 .It Nm usermod Oo Ar OPTIONS Oc Ar LOGIN
 Modify a user account.
+
+  Add user to group
+  $ usermod -a -G groupname username
+  
 .It Nm userdel Oo Ar OPTIONS Oc LOGIN
 Delete a user account and related files.
 .It Nm groupadd Oo Ar OPTIONS Oc Ar NEWGROUP

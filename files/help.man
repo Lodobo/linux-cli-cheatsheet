@@ -197,7 +197,7 @@ Change the permissions of a file or directory.
   $ chmod o-x script.sh
 .sp
   Change permissions recursively:
-  $ chmod -R u+r new_dir
+  $ chmod -R u+r directory
 .TP 2n
 \fBchgrp\fR [\fIOPTION\fR] \fIGROUP FILE ...\fR
 Change file group ownership.
@@ -210,6 +210,10 @@ Create a new user.
 .TP 2n
 \fBusermod\fR [\fIOPTIONS\fR] \fILOGIN\fR
 Modify a user account.
+.sp
+  Add user to group
+  $ usermod -a -G groupname username
+.sp
 .TP 2n
 \fBuserdel\fR [\fIOPTIONS\fR] LOGIN
 Delete a user account and related files.
