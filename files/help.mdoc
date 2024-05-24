@@ -115,6 +115,8 @@ Print information about a file.
 Print information about a file.
 .It Nm pandoc Oo Fl -from Ar FORMAT | Fl -to Ar FORMAT Oc Ar FILE
 Convert from one markup format into another.
+.It Nm magick Oo Fl input-options Oc Ar INPUT_FILE Oo output-options Oc Ar OUTPUT_FILE
+Create, edit, compose, or convert between image formats. See also: ImageMagick(1).
 .El
 
 .Sh SEARCH-UTILS 
@@ -196,7 +198,7 @@ Create a new user.
 Modify a user account.
 
   Add user to group
-  $ usermod -a -G groupname username
+  # usermod -a -G groupname username
 .It Nm userdel Oo Ar OPTIONS Oc LOGIN
 Delete a user account and related files.
 .It Nm groupadd Oo Ar OPTIONS Oc Ar NEWGROUP
@@ -208,10 +210,10 @@ Delete a group
 .It Nm gpasswd Oo Ar OPTION Oc Ar GROUP
 
   Define group admins: 
-  \# gpasswd -A user1, user2 group
+  # gpasswd -A user1, user2 group
 
   Set the list of group members
-  \# gpasswd -M user1, user2 group 
+  # gpasswd -M user1, user2 group 
 .It Nm chpasswd Op Ar OPTIONS
 Update passwords in batch mode
 .It Nm passwd Op Ar USERNAME
@@ -249,7 +251,7 @@ Paru is an AUR-helper for arch-based distributions written in Rust.
 .It Nm flatpak
 Flatpak is a software utility for packaging and distributing applications to a wide range of Linux distributions.
 .It Nm snap
-Snap is a software packaging and deployment system developed by Canonical. The packages, called snaps, and the tool for using them, snapd, work across a range of Linux distributions.
+Snap is a software packaging and deployment system developed by Canonical. The packages, called snaps, and the tool for using them, snapd, work across a range of Linux distributions
 .El
 
 .Sh CLI PROGRAMS

@@ -139,6 +139,9 @@ Print information about a file.
 .TP 2n
 \fBpandoc\fR [\fB\--from\fR \fIFORMAT\fR | \fB\--to\fR \fIFORMAT\fR] \fIFILE\fR
 Convert from one markup format into another.
+.TP 2n
+\fBmagick\fR [\fB\-input-options\fR] \fIINPUT_FILE\fR [output-options] \fIOUTPUT_FILE\fR
+Create, edit, compose, or convert between image formats. See also: ImageMagick(1).
 .PP
 .SH "SEARCH-UTILS"
 .TP 2n
@@ -231,7 +234,7 @@ Create a new user.
 Modify a user account.
 .sp
   Add user to group
-  $ usermod -a -G groupname username
+  # usermod -a -G groupname username
 .TP 2n
 \fBuserdel\fR [\fIOPTIONS\fR] LOGIN
 Delete a user account and related files.
@@ -248,9 +251,12 @@ Delete a group
 \fBgpasswd\fR [\fIOPTION\fR] \fIGROUP\fR
 .sp
   Define group admins:
+  # gpasswd -A user1, user2 group
 .sp
   Set the list of group members
-  .It Nm chpasswd Op Ar OPTIONS
+  # gpasswd -M user1, user2 group
+.TP 2n
+\fBchpasswd\fR [\fIOPTIONS\fR]
 Update passwords in batch mode
 .TP 2n
 \fBpasswd\fR [\fIUSERNAME\fR]
@@ -295,7 +301,7 @@ Paru is an AUR-helper for arch-based distributions written in Rust.
 Flatpak is a software utility for packaging and distributing applications to a wide range of Linux distributions.
 .TP 9n
 \fBsnap\fR
-Snap is a software packaging and deployment system developed by Canonical. The packages, called snaps, and the tool for using them, snapd, work across a range of Linux distributions.
+Snap is a software packaging and deployment system developed by Canonical. The packages, called snaps, and the tool for using them, snapd, work across a range of Linux distributions
 .PP
 .SH "CLI PROGRAMS"
 .TP 9n
