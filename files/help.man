@@ -131,11 +131,17 @@ Print the last lines of a file.
 .PP
 .SH "FILE-UTILS"
 .TP 2n
-\fBmediainfo\fR [\fB\-f\fR] \fIFILE\fR
+\fBmediainfo\fR [\fB\-f\fR] \fIFILE ...\fR
 Print information about a file.
 .TP 2n
-\fBexiftool\fR \fIFILE\fR
+\fBexiftool\fR \fIFILE ...\fR
 Print information about a file.
+.TP 2n
+\fBfile\fR [\fB\-i\fR] \fIFILE ...\fR
+Show filetypes.
+.sp
+  Print the mime-type of a file.
+  $ file --mime-type file.txt
 .TP 2n
 \fBpandoc\fR [\fB\--from\fR \fIFORMAT\fR | \fB\--to\fR \fIFORMAT\fR] \fIFILE\fR
 Convert from one markup format into another.

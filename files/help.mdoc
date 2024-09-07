@@ -109,10 +109,15 @@ Print the last lines of a file.
 
 .Sh FILE-UTILS
 .Bl -tag
-.It Nm mediainfo Oo Fl f Oc Ar FILE
+.It Nm mediainfo Oo Fl f Oc Ar FILE ...
 Print information about a file.
-.It Nm exiftool Ar FILE
+.It Nm exiftool Ar FILE ...
 Print information about a file.
+.It Nm file Oo Fl i Oc Ar FILE ...
+Show filetypes.
+
+  Print the mime-type of a file.
+  $ file --mime-type file.txt
 .It Nm pandoc Oo Fl -from Ar FORMAT | Fl -to Ar FORMAT Oc Ar FILE
 Convert from one markup format into another.
 .It Nm magick Oo Fl input-options Oc Ar INPUT_FILE Oo output-options Oc Ar OUTPUT_FILE
