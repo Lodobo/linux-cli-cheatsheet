@@ -1,0 +1,496 @@
+.\" Automatically generated from an mdoc input file.  Do not edit.
+.TH "help" "1" "September 1 2023" "Fedora 38" "General Commands Manual"
+.nh
+.if n .ad l
+.sp
+.SH "MANPAGES"
+.TP 2n
+\fBman\fR [\fIPROGRAM\fR]
+The man utility finds and displays online manual documentation pages. Man pages include descriptions, applicable options, flags, examples, and other informative sections.
+.sp
+A command can have multiple man pages split into different sections.
+.sp
+List all available sections for a command.
+.nf
+.RS 8n
+$ man --whatis ip
+.RE
+.fi
+.RS 2n
+.sp
+Show the man page for a specific section.
+.nf
+.RS 8n
+$ man 7 ip
+.RE
+.fi
+.RE
+.TP 2n
+\fBapropos\fR [\fIREGEX\fR]
+Search the manual pages for names and descriptions.
+.TP 2n
+\fBtldr\fR [\fIPROGRAM\fR]
+The tldr-project is a collection of community-maintained help pages for command-line tools that aims to be a simpler, more approachable complement to traditional man pages. tldr pages are focused on practical examples. To use tldr you can install the tealdear client at
+\fB`https://github.com/dbrgn/tealdeer`\fR.
+.PP
+.SH "CORE-UTILS"
+.TP 2n
+\fBcd\fR [\fIDIR\fR]
+Change current working directory. If no directory is specified, the
+working directory is changed to the home directory of the current user.
+.TP 2n
+\fBls\fR [\fB\-lah\fR] [\fIDIR\fR]
+List the files in a directory. To list all files, including hidden files, in a detailed format, use `ls -lah`.
+.TP 2n
+\fBrm\fR [\fB\-rf\fR] \fIFILE ...\fR
+Delete files and directories.
+.TP 2n
+\fBmv\fR \fISOURCE TARGET\fR
+Move or rename files.
+.TP 2n
+\fBcp\fR [\fB\-R\fR] \fISOURCE TARGET\fR
+Copy a file or directory.
+.TP 2n
+\fBln\fR \fISOURCE TARGET\fR
+Create a symbolic link.
+.TP 2n
+\fBpwd\fR
+Print (current) working directory.
+.TP 2n
+\fBtouch\fR \fIFILE ...\fR
+Create files and update access/modification timestamps.
+.TP 2n
+\fBmkdir\fR [\fB\-p\fR] \fIDIR ...\fR
+Create directories.
+.TP 2n
+\fBdu\fR [\fB\-sh\fR] [\fIFILE ...\fR]
+Display disk usage on file systems. To print non-recursively in a human readable format, use `du -sh [file]`.
+.TP 2n
+\fBrealpath\fR [\fIPATH ...\fR]
+Return resolved physical path.
+.TP 2n
+\fBwhich\fR [\fIEXECUTABLE\fR]
+Locate and display the location of a program file in the user's path.
+.TP 2n
+\fBwhoami\fR
+Print the effective user ID.
+.TP 2n
+\fBhostname\fR
+Print the system's host name.
+.TP 2n
+\fBtop\fR
+Display processes.
+.TP 2n
+\fBkill\fR [-s SIGNAL_NAME] \fIPID ...\fR
+Terminate processes  by PID.
+.TP 2n
+\fBkillall\fR [-SIGNAL] \fIPROCNAME ...\fR
+Terminate processes by name.
+.TP 2n
+\fBpgrep\fR [options] \fIpattern\fR
+Look up processes using regex.
+.TP 2n
+\fBpkill\fR [options] \fIpattern\fR
+Kill processes using regex.
+.sp
+Kill a parent process and all its children.
+.nf
+.RS 8n
+$ pkill -P <pid>
+.RE
+.fi
+.PP
+.SH "ARCHIVE-UTILS"
+.TP 2n
+\fBzip\fR [\fB\-re\fR] \fIARCHIVE FILE ...\fR
+Package and compress files into a ZIP archive.
+.sp
+Add files to archive.
+.nf
+.RS 8n
+$ zip -r archive.zip dir_1 file_1 file_2
+.RE
+.fi
+.RS 2n
+.sp
+Select compression level. Bigger number -> more compression.
+.nf
+.RS 8n
+$ zip -r -9 archive.zip file_1 file_2
+.RE
+.fi
+.RE
+.TP 2n
+\fBunzip\fR [\fB\-l\fR] \fIARCHIVE ...\fR
+Extract files from a ZIP archive.
+.sp
+Unzip into current directory.
+.nf
+.RS 8n
+$ unzip  archive.zip
+.RE
+.fi
+.RS 2n
+.sp
+Unzip to a specific path.
+.nf
+.RS 8n
+$ unzip archive.zip -d ~/Documents
+.RE
+.fi
+.sp
+List the contents of an archive without extracting them.
+.nf
+.RS 8n
+$ unzip -l archive.zip
+.RE
+.fi
+.sp
+.RE
+.TP 2n
+\fBtar\fR
+General purpose archiving utility.
+.sp
+Create an archive.
+.nf
+.RS 8n
+$ tar cf archive.tar file_1 file_2
+.RE
+.fi
+.RS 2n
+.sp
+Extract an archive in the current directory.
+.nf
+.RS 8n
+$ tar xf archive.tar
+.RE
+.fi
+.RE
+.PP
+.SH "TEXT-UTILS"
+.TP 2n
+\fBcat\fR [\fB\-n\fR] \fIFILE\fR
+Print file content to STDOUT. Name derived from concatenate.
+.TP 2n
+\fBless\fR \fIFILE\fR
+Display and navigate file content in a terminal pager.
+.TP 2n
+\fBhead\fR [\fB\-n\fR] \fIFILE\fR
+Print the first lines of a file.
+.TP 2n
+\fBtail\fR [\fB\-n\fR] \fIFILE\fR
+Print the last lines of a file.
+.PP
+.SH "FILE-UTILS"
+.TP 2n
+\fBmediainfo\fR [\fB\-f\fR] \fIFILE ...\fR
+Print information about a file.
+.TP 2n
+\fBexiftool\fR \fIFILE ...\fR
+Print information about a file.
+.TP 2n
+\fBfile\fR [\fB\-i\fR] \fIFILE ...\fR
+Show filetypes.
+.sp
+Print the mime-type of a file.
+.nf
+.RS 8n
+$ file --mime-type file.txt
+.RE
+.fi
+.TP 2n
+\fBpandoc\fR [\fB\--from\fR \fIFORMAT\fR | \fB\--to\fR \fIFORMAT\fR] \fIFILE\fR
+Convert from one markup format into another.
+.TP 2n
+\fBmagick\fR [\fB\-input-options\fR] \fIINPUT_FILE\fR [output-options] \fIOUTPUT_FILE\fR
+Create, edit, compose, or convert between image formats. See also: ImageMagick(1).
+.PP
+.SH "SEARCH-UTILS"
+.TP 2n
+\fBfind\fR \fIroot\fR [\fIPATTERN\fR]
+Find files or directories recursively in a specified root directory.
+.sp
+Find files by filename. Case-insensitive.
+.nf
+.RS 8n
+$ find ~/Documents -iname "*filename*"
+.RE
+.fi
+.RS 2n
+.sp
+Find files by extension.
+.nf
+.RS 8n
+$ find ~/Documents -name "*.txt"
+.RE
+.fi
+.sp
+Find directories. Case-sensitive.
+.nf
+.RS 8n
+$ find /home/ -type d -name "Music"
+.RE
+.fi
+.RE
+.TP 2n
+\fBlocate\fR [\fB\-i\fR] \fIPATTERN ...\fR
+Find filenames quickly. `locate` searches in a database prepared by `locate updatedb`. `locate` does not check whether the files in the database still exist. `locate` cannot report files created after the most recent update of the database.
+.TP 2n
+\fBgrep\fR \fIPATTERN\fR \fIFILE\fR
+Search for a pattern in files or strings using regular expressions.
+.sp
+Search `stdin` for lines that match a pattern.
+.nf
+.RS 8n
+$ cat file.txt | grep "search_pattern"
+.RE
+.fi
+.TP 2n
+\fBsk\fR
+sk (Skim) is a Fuzzy finder written in rust. See also, `fzf`.
+.PP
+.SH "NET-UTILS"
+.TP 2n
+\fBip\fR
+Show and manipulate network devices, interfaces and tunnels.
+.sp
+Display the host's IP address.
+.nf
+.RS 8n
+$ ip addr
+.RE
+.fi
+.TP 2n
+\fBifconfig\fR [\fIINTERFACE\fR] [\fIPARAMETERS\fR]
+Show and configure network devices.
+.TP 2n
+\fBping\fR [\fB\-icf\fR] \fIHOST\fR
+Send ICMP echo-requests to network hosts.
+.sp
+Ping Google's dns server.
+.nf
+.RS 8n
+$ ping 8.8.8.8
+.RE
+.fi
+.TP 2n
+\fBwget\fR [\fB\-c\fR] \fIURL\fR
+Download files from the web.
+.sp
+Continue downloading a partially downloaded file.
+.nf
+.RS 8n
+$ wget -c "www.fileserver.com/files/archive.zip"
+.RE
+.fi
+.TP 2n
+\fBrsync\fR [\fB\-azP\fR] \fISOURCE TARGET\fR
+Transfer and synchronize files between local and remote hosts.
+.TP 2n
+\fBssh\fR \fIUSERNAME@HOST\fR
+ssh to remote host.
+.TP 2n
+\fBdig\fR \fIDOMAIN\fR
+Perform DNS lookups for a domain.
+.TP 2n
+\fBnmap\fR
+Network exploration tool and security / port scanner.
+.PP
+.SH "SYS-UTILS"
+.TP 2n
+\fBchmod\fR [\fIOPTION\fR] \fIMODE FILE\fR
+Change the permissions of a file or directory.
+.sp
+Give the [u]ser who owns the file the right to [r]ead [w]rite and e[x]ecute.
+.nf
+.RS 8n
+$ chmod u+rwx script.sh
+.RE
+.fi
+.RS 2n
+.sp
+Give read permissions to [g]roup.
+.nf
+.RS 8n
+$ chmod g+r script.sh
+.RE
+.fi
+.sp
+Remove execute permissions from [o]thers.
+.nf
+.RS 8n
+$ chmod o-x script.sh
+.RE
+.fi
+.sp
+Change permissions recursively.
+.nf
+.RS 8n
+$ chmod -R u+r directory
+.RE
+.fi
+.RE
+.TP 2n
+\fBchgrp\fR [\fIOPTION\fR] \fIGROUP FILE ...\fR
+Change file group ownership.
+.TP 2n
+\fBchown\fR [\fIOPTION\fR] [\fIOWNER\fR] \fIFILE\fR
+Change file ownership.
+.TP 2n
+\fBuseradd\fR [\fIOPTIONS\fR] \fILOGIN\fR
+Create a new user.
+.TP 2n
+\fBusermod\fR [\fIOPTIONS\fR] \fILOGIN\fR
+Modify a user account.
+.sp
+Add user to group.
+.nf
+.RS 8n
+# usermod -a -G groupname username
+.RE
+.fi
+.TP 2n
+\fBuserdel\fR [\fIOPTIONS\fR] LOGIN
+Delete a user account and related files.
+.TP 2n
+\fBgroupadd\fR [\fIOPTIONS\fR] \fINEWGROUP\fR
+Create a new group.
+.TP 2n
+\fBgroupmod\fR [\fIOPTIONS\fR] \fIGROUP\fR
+Modify a group definition on the system.
+.TP 2n
+\fBgroupdel\fR [\fIOPTIONS\fR] \fIGROUP\fR
+Delete a group.
+.TP 2n
+\fBgpasswd\fR [\fIOPTION\fR] \fIGROUP\fR
+Define group admins.
+.nf
+.RS 8n
+# gpasswd -A user1, user2 group
+.RE
+.fi
+.RS 2n
+.sp
+Set the list of group members.
+.nf
+.RS 8n
+# gpasswd -M user1, user2 group
+.RE
+.fi
+.RE
+.TP 2n
+\fBchpasswd\fR [\fIOPTIONS\fR]
+Update passwords in batch mode.
+.TP 2n
+\fBpasswd\fR [\fIUSERNAME\fR]
+Update user's authentication tokens.
+.TP 2n
+\fBFuser\fR
+List process IDs of all processes that have one or more files open. Use for trouble-shooting busy devices and ports.
+.PP
+.SH "LIST USERS AND GROUPS"
+User account information is stored in
+\fI/etc/passwd\fR.
+.PP
+Group account information is stored in
+\fI/etc/group\fR.
+.PP
+A list of users and groups can be found inside these files.
+.sp
+.SH "PACKAGE MANAGEMENT"
+.TP 9n
+\fBapt\fR
+APT (Advanced Package Tool), is a package manager for Debian-based Linux distributions.
+.TP 9n
+\fBdpkg\fR
+dpkg (Debian Package) is a low-level package manager for Debian-based Linux distrutions. `dpkg` is used to install, remove, and provide information about `.deb` packages.
+.TP 9n
+\fBdnf\fR
+dnf (Dandified YUM) is a package manager for rpm-based Linux distributions such as RHEL, Fedora, and CentOS. It is a sucessor to yum (Yellowdog Updater, Modified).
+.TP 9n
+\fBzypper\fR
+Zypper is a package manager for openSuse.
+.TP 9n
+\fBpacman\fR
+Pacman is a package manager for arch-based distributions.
+.TP 9n
+\fByay\fR
+Yay (Yet Another Yogurt) is an AUR-helper for arch-based distributions written in Go.
+.TP 9n
+\fBparu\fR
+Paru is an AUR-helper for arch-based distributions written in Rust.
+.TP 9n
+\fBflatpak\fR
+Flatpak is a software utility for packaging and distributing applications to a wide range of Linux distributions.
+.TP 9n
+\fBsnap\fR
+Snap is a software packaging and deployment system developed by Canonical. The packages, called snaps, and the tool for using them, snapd, work across a range of Linux distributions.
+.PP
+.SH "CLI PROGRAMS"
+.TP 9n
+\fBhtop\fR
+CLI task manager.
+.TP 9n
+\fBnano\fR
+CLI text editor.
+.TP 9n
+\fBvim\fR
+CLI text editor.
+.TP 9n
+\fBhx\fR
+CLI text editor inspired by Kakoune.
+.TP 9n
+\fBjoshuto\fR
+CLI file manager.
+.TP 9n
+\fBranger\fR
+CLI file manager.
+.TP 9n
+\fBdisown\fR
+Launch a terminal application in the background. Similar to nohup.
+.TP 9n
+\fByt-dlp\fR
+Download media from the internet.
+.TP 9n
+\fBffmpeg\fR
+Audio and video converter.
+.TP 9n
+\fBffprobe\fR
+Multimedia stream analyzer.
+.TP 9n
+\fBffplay\fR
+A simple and portable media player.
+.PP
+.SH "TROUBLESHOOTING"
+.TP 9n
+\fBinxi\fR
+Display system information.
+.TP 9n
+\fBlscpu\fR
+List cpu information.
+.TP 9n
+\fBlshw\fR
+List hardware information.
+.TP 9n
+\fBlspci\fR
+List PCI devices.
+.TP 9n
+\fBlsusb\fR
+List USB devices.
+.TP 9n
+\fBlsblk\fR
+List block (storage) devices.
+.TP 9n
+\fBlsscsi\fR
+List SCSI devices.
+.TP 9n
+\fBuname\fR [\fB\-a\fR]
+Print kernel information.
+.TP 9n
+\fBdmesg\fR
+dmesg (diagnostic message) is a utility for displaying kernel ring buffer messages. It provides a way to access and view system and hardware-related messages generated by the kernel during the boot process and while the system is running.
+.PP
+.SH "LOGS"
+Logs are stored in
+\fI/var/log\fR,
+to display the logs, use the `less` command. With systemd you can also use the `journalctl` command.
