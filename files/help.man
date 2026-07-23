@@ -145,7 +145,6 @@ List the contents of an archive without extracting them.
 $ unzip -l archive.zip
 .RE
 .fi
-.sp
 .RE
 .TP 2n
 \fBtar\fR
