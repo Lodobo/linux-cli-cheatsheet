@@ -9,12 +9,12 @@ The man utility finds and displays online manual documentation pages. Man pages 
 .Pp
 A command can have multiple man pages split into different sections.
 .Pp
-List all available sections for a command:
+List all available sections for a command.
 .Bd -literal -offset indent -compact
 $ man --whatis ip
 .Ed
 .Pp
-Show the man page for a specific section:
+Show the man page for a specific section.
 .Bd -literal -offset indent -compact
 $ man 7 ip
 .Ed
@@ -67,7 +67,7 @@ Look up processes using regex.
 .It Nm pkill Oo options Oc Ar pattern
 Kill processes using regex.
 .Pp
-Kill a parent process and all its children:
+Kill a parent process and all its children.
 .Bd -literal -offset indent -compact
 $ pkill -P <pid>
 .Ed
@@ -78,7 +78,7 @@ $ pkill -P <pid>
 .It Nm zip Oo Fl re Oc Ar ARCHIVE FILE ...
 Package and compress files into a ZIP archive.
 .Pp
-Add files to archive:
+Add files to archive.
 .Bd -literal -offset indent -compact
 $ zip -r archive.zip dir_1 file_1 file_2
 .Ed
@@ -90,17 +90,17 @@ $ zip -r -9 archive.zip file_1 file_2
 .It Nm unzip Oo Fl l Oc Ar ARCHIVE ...
 Extract files from a ZIP archive.
 .Pp
-Unzip into current directory:
+Unzip into current directory.
 .Bd -literal -offset indent -compact
 $ unzip  archive.zip
 .Ed
 .Pp
-Unzip to a specific path:
+Unzip to a specific path.
 .Bd -literal -offset indent -compact
 $ unzip archive.zip -d ~/Documents
 .Ed
 .Pp
-List the contents of an archive without extracting them:
+List the contents of an archive without extracting them.
 .Bd -literal -offset indent -compact
 $ unzip -l archive.zip
 .Ed
@@ -108,12 +108,12 @@ $ unzip -l archive.zip
 .It Nm tar
 General purpose archiving utility.
 .Pp
-Create an archive:
+Create an archive.
 .Bd -literal -offset indent -compact
 $ tar cf archive.tar file_1 file_2
 .Ed
 .Pp
-Extract an archive in the current directory:
+Extract an archive in the current directory.
 .Bd -literal -offset indent -compact
 $ tar xf archive.tar
 .Ed
@@ -140,7 +140,7 @@ Print information about a file.
 .It Nm file Oo Fl i Oc Ar FILE ...
 Show filetypes.
 .Pp
-Print the mime-type of a file:
+Print the mime-type of a file.
 .Bd -literal -offset indent -compact
 $ file --mime-type file.txt
 .Ed
@@ -174,7 +174,7 @@ Find filenames quickly. `locate` searches in a database prepared by `locate upda
 .It Nm grep Ar PATTERN Ar FILE
 Search for a pattern in files or strings using regular expressions.
 .Pp
-Search `stdin` for lines that match a pattern:
+Search `stdin` for lines that match a pattern.
 .Bd -literal -offset indent -compact
 $ cat file.txt | grep "search_pattern"
 .Ed
@@ -187,7 +187,7 @@ sk (Skim) is a Fuzzy finder written in rust. See also, `fzf`.
 .It Nm ip
 Show and manipulate network devices, interfaces and tunnels.
 .Pp  
-Display the host's IP address:
+Display the host's IP address.
 .Bd -literal -offset indent -compact
 $ ip addr
 .Ed
@@ -196,14 +196,14 @@ Show and configure network devices.
 .It Nm ping Oo Fl icf Oc Ar HOST
 Send ICMP echo-requests to network hosts.
 .Pp
-Ping Google's dns server:
+Ping Google's dns server.
 .Bd -literal -offset indent -compact
 $ ping 8.8.8.8
 .Ed
 .It Nm wget Oo Fl c Oc Ar URL
 Download files from the web.
 .Pp
-Continue downloading a partially downloaded file:
+Continue downloading a partially downloaded file.
 .Bd -literal -offset indent -compact
 $ wget -c "www.fileserver.com/files/archive.zip"
 .Ed
@@ -222,22 +222,22 @@ Network exploration tool and security / port scanner.
 .It Nm chmod Oo Ar OPTION Oc Ar MODE FILE
 Change the permissions of a file or directory.
 .Pp
-Give the [u]ser who owns the file the right to [r]ead [w]rite and e[x]ecute:
+Give the [u]ser who owns the file the right to [r]ead [w]rite and e[x]ecute.
 .Bd -literal -offset indent -compact
 $ chmod u+rwx script.sh
 .Ed
 .Pp
-Give read permissions to [g]roup:
+Give read permissions to [g]roup.
 .Bd -literal -offset indent -compact
 $ chmod g+r script.sh
 .Ed
 .Pp
-Remove execute permissions from [o]thers:
+Remove execute permissions from [o]thers.
 .Bd -literal -offset indent -compact
 $ chmod o-x script.sh
 .Ed
 .Pp
-Change permissions recursively:
+Change permissions recursively.
 .Bd -literal -offset indent -compact
 $ chmod -R u+r directory 
 .Ed
@@ -250,7 +250,7 @@ Create a new user.
 .It Nm usermod Oo Ar OPTIONS Oc Ar LOGIN
 Modify a user account.
 .Pp
-Add user to group:
+Add user to group.
 .Bd -literal -offset indent -compact
 # usermod -a -G groupname username
 .Ed
@@ -263,12 +263,12 @@ Modify a group definition on the system.
 .It Nm groupdel Oo Ar OPTIONS Oc Ar GROUP
 Delete a group.
 .It Nm gpasswd Oo Ar OPTION Oc Ar GROUP
-Define group admins: 
+Define group admins. 
 .Bd -literal -offset indent -compact
 # gpasswd -A user1, user2 group
 .Ed
 .Pp
-Set the list of group members:
+Set the list of group members.
 .Bd -literal -offset indent -compact
 # gpasswd -M user1, user2 group 
 .Ed
